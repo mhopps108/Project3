@@ -7,7 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		87B29A6F1AFF3923008200FE /* TicTacToeBoard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87B29A6D1AFF3923008200FE /* TicTacToeBoard.cpp */; };
 		87D86BD51AFCCB2A00952731 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87D86BD41AFCCB2A00952731 /* main.cpp */; };
+		87D86BE31AFCCD5F00952731 /* OthelloBoard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87D86BE21AFCCD5F00952731 /* OthelloBoard.cpp */; };
+		87D86BE51AFCCD7000952731 /* OthelloMove.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87D86BE41AFCCD7000952731 /* OthelloMove.cpp */; };
+		87D86BE71AFCCD8500952731 /* OthelloView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87D86BE61AFCCD8500952731 /* OthelloView.cpp */; };
+		87F48A601AFF147500C99C0C /* TicTacToeMove.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87F48A5E1AFF147500C99C0C /* TicTacToeMove.cpp */; };
+		87F48A631AFF148100C99C0C /* TicTacToeView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87F48A611AFF148100C99C0C /* TicTacToeView.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +29,24 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		87B29A6D1AFF3923008200FE /* TicTacToeBoard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TicTacToeBoard.cpp; sourceTree = "<group>"; };
+		87B29A6E1AFF3923008200FE /* TicTacToeBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TicTacToeBoard.h; sourceTree = "<group>"; };
 		87D86BD11AFCCB2A00952731 /* Project3 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Project3; sourceTree = BUILT_PRODUCTS_DIR; };
 		87D86BD41AFCCB2A00952731 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		87D86BDB1AFCCB5B00952731 /* GameBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameBoard.h; sourceTree = "<group>"; };
+		87D86BDC1AFCCB5B00952731 /* GameExceptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameExceptions.h; sourceTree = "<group>"; };
+		87D86BDD1AFCCB5B00952731 /* GameMove.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameMove.h; sourceTree = "<group>"; };
+		87D86BDE1AFCCB5B00952731 /* GameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameView.h; sourceTree = "<group>"; };
+		87D86BDF1AFCCB5B00952731 /* OthelloBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OthelloBoard.h; sourceTree = "<group>"; };
+		87D86BE01AFCCB5B00952731 /* OthelloMove.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OthelloMove.h; sourceTree = "<group>"; };
+		87D86BE11AFCCB5B00952731 /* OthelloView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OthelloView.h; sourceTree = "<group>"; };
+		87D86BE21AFCCD5F00952731 /* OthelloBoard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OthelloBoard.cpp; sourceTree = "<group>"; };
+		87D86BE41AFCCD7000952731 /* OthelloMove.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OthelloMove.cpp; sourceTree = "<group>"; };
+		87D86BE61AFCCD8500952731 /* OthelloView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OthelloView.cpp; sourceTree = "<group>"; };
+		87F48A5E1AFF147500C99C0C /* TicTacToeMove.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TicTacToeMove.cpp; sourceTree = "<group>"; };
+		87F48A5F1AFF147500C99C0C /* TicTacToeMove.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TicTacToeMove.h; sourceTree = "<group>"; };
+		87F48A611AFF148100C99C0C /* TicTacToeView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TicTacToeView.cpp; sourceTree = "<group>"; };
+		87F48A621AFF148100C99C0C /* TicTacToeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TicTacToeView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +80,48 @@
 			isa = PBXGroup;
 			children = (
 				87D86BD41AFCCB2A00952731 /* main.cpp */,
+				87F48A591AFF143E00C99C0C /* Game */,
+				87F48A5A1AFF144F00C99C0C /* Othello */,
+				87F48A641AFF148B00C99C0C /* TicTacToe */,
 			);
 			path = Project3;
+			sourceTree = "<group>";
+		};
+		87F48A591AFF143E00C99C0C /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				87D86BDC1AFCCB5B00952731 /* GameExceptions.h */,
+				87D86BDB1AFCCB5B00952731 /* GameBoard.h */,
+				87D86BDD1AFCCB5B00952731 /* GameMove.h */,
+				87D86BDE1AFCCB5B00952731 /* GameView.h */,
+			);
+			name = Game;
+			sourceTree = "<group>";
+		};
+		87F48A5A1AFF144F00C99C0C /* Othello */ = {
+			isa = PBXGroup;
+			children = (
+				87D86BDF1AFCCB5B00952731 /* OthelloBoard.h */,
+				87D86BE21AFCCD5F00952731 /* OthelloBoard.cpp */,
+				87D86BE01AFCCB5B00952731 /* OthelloMove.h */,
+				87D86BE41AFCCD7000952731 /* OthelloMove.cpp */,
+				87D86BE11AFCCB5B00952731 /* OthelloView.h */,
+				87D86BE61AFCCD8500952731 /* OthelloView.cpp */,
+			);
+			name = Othello;
+			sourceTree = "<group>";
+		};
+		87F48A641AFF148B00C99C0C /* TicTacToe */ = {
+			isa = PBXGroup;
+			children = (
+				87B29A6E1AFF3923008200FE /* TicTacToeBoard.h */,
+				87B29A6D1AFF3923008200FE /* TicTacToeBoard.cpp */,
+				87F48A5F1AFF147500C99C0C /* TicTacToeMove.h */,
+				87F48A5E1AFF147500C99C0C /* TicTacToeMove.cpp */,
+				87F48A621AFF148100C99C0C /* TicTacToeView.h */,
+				87F48A611AFF148100C99C0C /* TicTacToeView.cpp */,
+			);
+			name = TicTacToe;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,7 +180,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87F48A631AFF148100C99C0C /* TicTacToeView.cpp in Sources */,
+				87B29A6F1AFF3923008200FE /* TicTacToeBoard.cpp in Sources */,
+				87D86BE31AFCCD5F00952731 /* OthelloBoard.cpp in Sources */,
+				87F48A601AFF147500C99C0C /* TicTacToeMove.cpp in Sources */,
 				87D86BD51AFCCB2A00952731 /* main.cpp in Sources */,
+				87D86BE71AFCCD8500952731 /* OthelloView.cpp in Sources */,
+				87D86BE51AFCCD7000952731 /* OthelloMove.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,6 +303,7 @@
 				87D86BDA1AFCCB2A00952731 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
