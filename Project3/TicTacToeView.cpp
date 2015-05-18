@@ -1,11 +1,11 @@
-//
-//  TicTacToeView.cpp
-//  Project3
-//
+// Matt Hopps
+// Project3
+// TicTacToeView.cpp
 #include "TicTacToeView.h"
 using namespace std;
 
-void TicTacToeView::PrintBoard(std::ostream &s) const {
+// prints the current OthelloBoard to ostream
+void TicTacToeView::PrintBoard(ostream &s) const {
    s << "\n    0  1  2 " << endl;
    s << "   ----------" << endl;
    for (int i = 0; i < TTT_BOARD_SIZE; i++) {

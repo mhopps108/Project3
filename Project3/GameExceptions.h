@@ -1,3 +1,6 @@
+// Matt Hopps
+// Project3
+// GameExceptions.h
 #ifndef __GAMEEXCEPTIONS_H
 #define __GAMEEXCEPTIONS_H
 

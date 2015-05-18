@@ -1,5 +1,4 @@
 // Matt Hopps
-//
 // Project3
 // OthelloView.cpp
 #include "OthelloView.h"
@@ -29,9 +28,3 @@ void OthelloView::PrintBoard(ostream &s) const {
    }
    s << endl;
 }
-
-// overloaded operator<< to print OthelloViews
-//ostream& operator<< (ostream &lhs, const OthelloView &rhs) {
-//   rhs.PrintBoard(lhs);
-//   return lhs;
-//}

@@ -1,14 +1,12 @@
 // Matt Hopps
-//
 // Project3
 // OthelloMove.cpp
 #include "OthelloMove.h"
 #include "OthelloBoard.h"
-//#include "OthelloExceptions.h"
 #include <sstream>
 using namespace std;
 
-//int OthelloMove::mOnHeap = 0;
+int OthelloMove::mOnHeap = 0;
 
 // default constructor, assign -1,-1 a pass
 OthelloMove::OthelloMove() : mRow(-1), mCol(-1) {}
@@ -34,7 +32,7 @@ GameMove& OthelloMove::operator=(const std::string &str) {
    return *this;
 }
 
-// operator==
+// compare two OthelloMoves
 bool OthelloMove::Equals(const GameMove &other) const {
    const OthelloMove *om = dynamic_cast<const OthelloMove*>(&other);
    if (om == nullptr)

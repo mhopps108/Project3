@@ -1,7 +1,6 @@
-//
-//  TicTacToeView.h
-//  Project3
-//
+// Matt Hopps
+// Project3
+// TicTacToeView.h
 #ifndef __TICTACTOEVIEW_H
 #define __TICTACTOEVIEW_H
 
@@ -17,9 +16,6 @@ private:
 public:
    TicTacToeView(GameBoard *b)
       : mTicTacToeBoard(dynamic_cast<TicTacToeBoard*>(b)) {}
-   
-   // destructor
-   virtual ~TicTacToeView() {}
 };
 
 #endif

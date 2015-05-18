@@ -1,3 +1,6 @@
+// Matt Hopps
+// Project3
+// GameView.h
 #ifndef __GAMEVIEW_H
 #define __GAMEVIEW_H
 #include "GameBoard.h"

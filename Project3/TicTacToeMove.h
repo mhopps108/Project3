@@ -1,13 +1,10 @@
-//
-//  TicTacToeMove.h
-//  Project3
-//
-
+// Matt Hopps
+// Project3
+// TicTacToeMove.h
 #ifndef __TICTACTOEMOVE_H
 #define __TICTACTOEMOVE_H
 #include "GameMove.h"
-//#include "TicTacToeBoard.h"
-
+#include <iostream>
 
 class TicTacToeMove : public GameMove {
 private:
@@ -20,6 +17,8 @@ private:
    TicTacToeMove(int row, int col);
    
 public:
+   static int mOnHeap;
+   
    // destructor
    virtual ~TicTacToeMove() {}
    
@@ -29,9 +28,19 @@ public:
    
    virtual operator std::string() const;
    
-//   inline bool IsPass() const {return mRow == -1 && mCol == -1;}
-   
+//   static void* operator new(std::size_t sz){
+//      mOnHeap++;
+//      std::cout << "operator new: " << mOnHeap << " TTTMoves on the heap"
+//         << std::endl;
+//      return ::operator new(sz);
+//   }
+//   
+//   static void operator delete(void* ptr, std::size_t sz) {
+//      mOnHeap--;
+//      std::cout << "operator delete: " << mOnHeap << " TTTMoves on the heap"
+//         << std::endl;
+//      ::operator delete(ptr);
+//   }
 };
-
 
 #endif

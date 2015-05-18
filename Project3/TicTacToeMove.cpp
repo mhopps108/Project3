@@ -1,19 +1,20 @@
-//
-//  TicTacToeMove.cpp
-//  Project3
-//
+// Matt Hopps
+// Project3
+// TicTacToeMove.cpp
 #include "TicTacToeMove.h"
 #include "TicTacToeBoard.h"
 #include <sstream>
 using namespace std;
 
+int TicTacToeMove::mOnHeap = 0;
+
+// default constructor, assign -1,-1
 TicTacToeMove::TicTacToeMove() : mRow(-1), mCol(-1) {}
 
+// constructor with params
 TicTacToeMove::TicTacToeMove(int row, int col) : mRow(row), mCol(col) {}
 
-
-// public:
-
+// assignment operator
 GameMove& TicTacToeMove::operator=(const std::string &str) {
    istringstream iss(str);
    char dummy;
@@ -27,6 +28,7 @@ GameMove& TicTacToeMove::operator=(const std::string &str) {
    return *this;
 }
 
+// compare two TicTacToeMoves
 bool TicTacToeMove::Equals(const GameMove &other) const {
    const TicTacToeMove *tttm = dynamic_cast<const TicTacToeMove*>(&other);
    if (tttm == nullptr)
@@ -35,6 +37,7 @@ bool TicTacToeMove::Equals(const GameMove &other) const {
    return (mRow == tttm->mRow && mCol == tttm->mCol);
 }
 
+// returns string representation of a TicTacToeMove
 TicTacToeMove::operator std::string() const {
    ostringstream oss;
    oss << "(" << mRow << "," << mCol << ")";

@@ -1,11 +1,12 @@
+// Matt Hopps
+// Project3
+// OthelloView.h
 #ifndef __OTHELLOVIEW_H
 #define __OTHELLOVIEW_H
 #include "OthelloBoard.h"
 #include "GameView.h"
 #include <iostream>
 
-// Same code as before; but now you just implement PrintBoard, and not
-// operator<<.
 class OthelloView : public GameView {
 private:
 	OthelloBoard *mOthelloBoard;
@@ -13,8 +14,6 @@ private:
 
 public:
    OthelloView(GameBoard *b) : mOthelloBoard(dynamic_cast<OthelloBoard*>(b)) {}
-   
-   // destructor
-   virtual ~OthelloView() {}
 };
+
 #endif

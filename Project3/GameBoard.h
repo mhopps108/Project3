@@ -1,24 +1,31 @@
+// Matt Hopps
+// Project3
+// GameBoard.h
 #ifndef __GAMEBOARD_H
 #define __GAMEBOARD_H
 
 #include "GameMove.h"
 #include "GameExceptions.h"
 #include <vector>
+#include <iostream>
 
 class GameBoard {
 public:
-   // WRITE THIS FUNCTION!!!
-   virtual ~GameBoard() {
-      // You must write this function so that any moves owned by the game board
-      // are freed from the heap when the board is destructed.
-
-      // remove the following line once you have finished this function.
-      // This exception is just a reminder to write this function.
-      throw GameException("You need to write the GameBoard destructor!!! See GameBoard.h");
-   }
 
    // Initializes a GameBoard with a NextPlayer of 1, and a Value of 0
-   GameBoard() : mNextPlayer(1), mValue(0) {}
+   GameBoard() : mNextPlayer(1), mValue(0) {
+//      std::cout << "GameBoard Constructor"<< std:: endl;
+   }
+   
+   // distructor
+   virtual ~GameBoard() {
+//      std::cout <<"GameBoard Distructor" << std::endl;
+      for (GameMove *m : mHistory) {
+         delete m;
+      }
+      mHistory.clear();
+   }
+
 
    /*
    Fills in a vector with all possible moves that are valid for the current 
@@ -66,7 +73,7 @@ public:
    Gets a vector of all moves applied to this board. The last move in the vector
    is the most recent move applied to the board.
    */
-   inline const std::vector<GameMove *>* GetMoveHistory() const {
+   inline const std::vector<GameMove *> *GetMoveHistory() const {
       return &mHistory;
    }
 

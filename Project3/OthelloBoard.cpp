@@ -1,5 +1,4 @@
 // Matt Hopps
-//
 // Project3
 // OthelloBoard.cpp
 #include "OthelloBoard.h"
@@ -8,6 +7,7 @@ using namespace std;
 
 // default constructor, initial board setup for new game
 OthelloBoard::OthelloBoard() : GameBoard() {
+//   cout << "OthelloBoard Constructor" << endl;
    int mid = BOARD_SIZE/2;
    mBoard[mid-1][mid] = BLACK;
    mBoard[mid][mid-1] = BLACK;
@@ -41,12 +41,9 @@ void OthelloBoard::GetPossibleMoves(vector<GameMove *> *list) const {
                               if (mBoard[r][c] == mNextPlayer) {
                                  OthelloMove *m =
                                        dynamic_cast<OthelloMove*>(CreateMove());
-//                                 GameMove *m = CreateMove();
                                  if (m == nullptr)
                                     throw OthelloException
-                                          ("Tried to create a non-OthelloMove.");
-//                                 dynamic_cast<OthelloMove*>(m)->mRow = row;
-//                                 dynamic_cast<OthelloMove*>(m)->mCol = col;
+                                         ("Tried to create a non-OthelloMove.");
                                  m->mRow = row;
                                  m->mCol = col;
                                  list->push_back(m);  // add move to vector
@@ -69,7 +66,7 @@ void OthelloBoard::GetPossibleMoves(vector<GameMove *> *list) const {
 
 // apply an OthelloMove to the OthelloBoard keeping track of FlipSets
 void OthelloBoard::ApplyMove(GameMove *move) {
-   
+
    OthelloMove *m = dynamic_cast<OthelloMove*>(move);
    if (m == nullptr)
       throw OthelloException("Tried to apply a non-OthelloMove.");
@@ -125,7 +122,7 @@ void OthelloBoard::ApplyMove(GameMove *move) {
    mNextPlayer = opponent;  // update next player
 }
 
-// undo last OthelloMove added in history vector
+// undo last OthelloMove in history vector
 void OthelloBoard::UndoLastMove() {
    if (!mHistory.empty()) {
       OthelloMove *m = dynamic_cast<OthelloMove*>(mHistory.back()); // last move

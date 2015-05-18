@@ -1,3 +1,6 @@
+// Matt Hopps
+// Project3
+// OthelloBoard.h
 #ifndef __OTHELLOBOARD_H
 #define __OTHELLOBOARD_H
 
@@ -22,7 +25,9 @@ public:
 	OthelloBoard();
    
    // destructor
-   virtual ~OthelloBoard() {}
+   virtual ~OthelloBoard() {
+//      std::cout << "OthelloBoard Destructor" << std::endl;
+   }
    
    /* 
    Fills in a vector with all possible moves on the current board state for

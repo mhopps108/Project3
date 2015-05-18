@@ -1,3 +1,6 @@
+// Matt Hopps
+// Project3
+// GameMove.h
 #ifndef __BOARDGAMEMOVE_H
 #define __BOARDGAMEMOVE_H
 #include <string>

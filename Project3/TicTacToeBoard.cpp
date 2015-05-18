@@ -1,19 +1,17 @@
-//
-//  TicTacToeBoard.cpp
-//  Project3
-//
+// Matt Hopps
+// Project3
+// TicTacToeBoard.cpp
 #include "TicTacToeBoard.h"
 #include "TicTacToeMove.h"
 #include <iostream>
 using namespace std;
 
-//
-TicTacToeBoard::TicTacToeBoard() : GameBoard() {}
+// constructor
+TicTacToeBoard::TicTacToeBoard() : GameBoard() {
+//   cout << "TicTacToe Constructor" << endl;
+}
 
-// destructor
-//TicTacToeBoard::~TicTacToeBoard() {}
-
-//
+// adds all possible moves for the current player to list
 void TicTacToeBoard::GetPossibleMoves(vector<GameMove *> *list) const {
    
    for (int row = 0; row < TTT_BOARD_SIZE; row++) {
@@ -29,27 +27,23 @@ void TicTacToeBoard::GetPossibleMoves(vector<GameMove *> *list) const {
          }
       }
    }
-   if (list->empty()) {
-      
-   }
 }
 
-//
+// apply an TicTacToeMove to the TicTacToeBoard
 void TicTacToeBoard::ApplyMove(GameMove *move) {
-   cout << "apply move" << endl;
-   
    TicTacToeMove *m = dynamic_cast<TicTacToeMove*>(move);
    if (m == nullptr)
       throw TicTacToeException("Tried to apply a non-TicTacToeMove.");
    
-   mBoard[m->mRow][m->mCol] = GetNextPlayer();//mNextPlayer;
-   mValue = mNextPlayer;
-   
+   mBoard[m->mRow][m->mCol] = GetNextPlayer();
    mHistory.push_back(m);
-   mNextPlayer *= -1;
+   
+   mMoveCount++;  // increment boards move count
+   mValue = (mMoveCount == MAX_MOVES ? EMPTY : GetNextPlayer());  // board value
+   mNextPlayer *= -1;  // change to next player
 }
 
-//
+// undo last TicTacToeMove in history vector
 void TicTacToeBoard::UndoLastMove() {
    if (!mHistory.empty()) {
       TicTacToeMove *m = dynamic_cast<TicTacToeMove*>(mHistory.back());
@@ -62,28 +56,30 @@ void TicTacToeBoard::UndoLastMove() {
       
       mValue *= -1;
       mNextPlayer *= -1;
+      mMoveCount--;
    }
 }
 
-
-// returns char value of a winner after searching the board
-char TicTacToeBoard::CheckWinner() const {
-   char winner = 0;
-   // check for vertical and horizontal wins
+// returns value of a winner after searching the board
+int TicTacToeBoard::CheckWinner() const {
+   int winner = EMPTY;
+   // check for vertical then horizontal winners
    for (int i = 0; i < TTT_BOARD_SIZE; i++) {
       if (mBoard[0][i] == mBoard[1][i] && mBoard[1][i] == mBoard[2][i]) {
-         winner = mBoard[0][i];
+         if (mBoard[0][i] != EMPTY)
+            winner = mBoard[0][i];
       }
       if (mBoard[i][0] == mBoard[i][1] && mBoard[i][1] == mBoard[i][2]) {
-         winner = mBoard[i][0];
+         if (mBoard[i][0] != EMPTY)
+            winner = mBoard[i][0];
       }
    }
 
-   // check for cross wins
+   // check for cross board winners
    if ((mBoard[0][0] == mBoard[1][1] && mBoard[1][1] == mBoard[2][2]) ||
        (mBoard[0][2] == mBoard[1][1] && mBoard[1][1] == mBoard[2][0])) {
-      winner = mBoard[1][1];
+      if (mBoard[1][1] != EMPTY)
+         winner = mBoard[1][1];
    }
-
    return winner;
 }
